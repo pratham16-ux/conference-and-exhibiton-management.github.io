@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Stackly Summit 2026</title>
+<meta name="description" content="Create your free Stackly Summit account to manage your pass, booth and schedule.">
+<link rel="icon" href="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="auth-body">
+<div class="auth-split">
+  <div class="auth-visual">
+    <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&w=1400&h=1600&q=80&fit=crop&output=webp&q=68" alt="Stackly Summit exhibition hall">
+    <div class="auth-visual-content">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="auth-vlogo"><img src="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37" alt="Stackly Summit logo"></div>
+        <a href="index.html" class="back-home">&larr; Back to site</a>
+      </div>
+      <div class="auth-visual-quote">
+        <div class="eyebrow">Join 8,000+ Builders &amp; Brands</div>
+        <p>&ldquo;Creating an account took two minutes and gave me one place to manage my pass, my booth and my whole team.&rdquo;</p>
+        <div class="qauthor"><img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&w=120&h=120&q=80&fit=crop&output=webp&q=72" alt="Attendee portrait"><div><strong>Rohan Mehta</strong><span>CTO, NimbusCloud</span></div></div>
+      </div>
+      <div class="auth-visual-stats">
+        <div><strong>220+</strong><span>Speakers</span></div>
+        <div><strong>150+</strong><span>Exhibitors</span></div>
+        <div><strong>8,200+</strong><span>Attendees</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-form-panel">
+  <div class="auth-wrap">
+  <div class="auth-logo"><img src="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37" alt="Stackly Summit logo"></div>
+  <div class="auth-card">
+    <h1>Create Your Account</h1>
+    <p class="sub">Set up free access to manage your pass, booth and schedule</p>
+
+    <div class="role-toggle">
+      <button type="button" class="active" data-role="attendee">Attendee</button>
+      <button type="button" data-role="exhibitor">Exhibitor</button>
+    </div>
+
+    <div class="auth-alert" id="signupAlert">Please fix the errors below and try again.</div>
+
+    <form class="auth-form" id="signupForm" novalidate>
+      <div class="form-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="Your full name">
+        <div class="err" id="nameErr"></div>
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email Address</label>
+        <input type="email" id="signupEmail" placeholder="you@company.com">
+        <div class="err" id="signupEmailErr"></div>
+      </div>
+      <div class="form-group">
+        <label for="signupPhone">Phone Number</label>
+        <input type="tel" id="signupPhone" placeholder="98450 12345">
+        <div class="err" id="phoneErr"></div>
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <div style="position:relative">
+          <input type="password" id="signupPassword" placeholder="Create a password" style="padding-right:64px">
+          <button type="button" class="pass-toggle" data-target="signupPassword" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--indigo-600)">Show</button>
+        </div>
+        <div class="err" id="signupPassErr"></div>
+      </div>
+      <div class="form-group">
+        <label for="signupConfirm">Confirm Password</label>
+        <div style="position:relative">
+          <input type="password" id="signupConfirm" placeholder="Re-enter your password" style="padding-right:64px">
+          <button type="button" class="pass-toggle" data-target="signupConfirm" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--indigo-600)">Show</button>
+        </div>
+        <div class="err" id="confirmErr"></div>
+      </div>
+      <div class="auth-row" style="align-items:flex-start">
+        <label><input type="checkbox" id="signupTerms"> I agree to the Terms of Service and Privacy Policy</label>
+      </div>
+      <div class="err" id="termsErr" style="margin-top:-16px;margin-bottom:16px"></div>
+      <button type="submit" class="btn btn-gold">Create New Account</button>
+    </form>
+
+    <div class="demo-hint">
+      <strong>Note:</strong> this creates a demo profile only. After signing up you'll be redirected to the login page to sign in.
+    </div>
+
+    <p class="auth-foot">Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+  </div>
+  </div>
+</div>
+<script src="assets/dashboard.js"></script>
+<script>initSignupPage();</script>
+
+</body>
+</html>

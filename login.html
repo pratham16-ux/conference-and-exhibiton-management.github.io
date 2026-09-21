@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Stackly Summit 2026</title>
+<meta name="description" content="Sign in to your Stackly Summit attendee or exhibitor dashboard.">
+<link rel="icon" href="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="auth-body">
+<div class="auth-split">
+  <div class="auth-visual">
+    <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&w=1400&h=1600&q=80&fit=crop&output=webp&q=68" alt="Stackly Summit conference hall">
+    <div class="auth-visual-content">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="auth-vlogo"><img src="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37" alt="Stackly Summit logo"></div>
+        <a href="index.html" class="back-home">&larr; Back to site</a>
+      </div>
+      <div class="auth-visual-quote">
+        <div class="eyebrow">Trusted by 8,000+ Attendees</div>
+        <p>&ldquo;Stackly Summit is the one conference on my calendar I never move &mdash; the access to this dashboard alone keeps my whole trip organized.&rdquo;</p>
+        <div class="qauthor"><img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&w=120&h=120&q=80&fit=crop&output=webp&q=72" alt="Attendee portrait"><div><strong>Meera Shah</strong><span>VP Product, Orbital Fintech</span></div></div>
+      </div>
+      <div class="auth-visual-stats">
+        <div><strong>220+</strong><span>Speakers</span></div>
+        <div><strong>150+</strong><span>Exhibitors</span></div>
+        <div><strong>8,200+</strong><span>Attendees</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="auth-form-panel">
+  <div class="auth-wrap">
+  <div class="auth-logo"><img src="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37" alt="Stackly Summit logo"></div>
+  <div class="auth-card">
+    <h1>Welcome Back</h1>
+    <p class="sub">Sign in to manage your pass, booth and schedule</p>
+
+    <div class="role-toggle">
+      <button type="button" class="active" data-role="attendee">Attendee</button>
+      <button type="button" data-role="exhibitor">Exhibitor</button>
+    </div>
+
+    <div class="auth-alert" id="loginAlert">Invalid credentials. Please try again.</div>
+
+    <form class="auth-form" id="loginForm" novalidate>
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="you@company.com">
+        <div class="err" id="emailErr"></div>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div style="position:relative">
+          <input type="password" id="loginPassword" placeholder="Enter your password" style="padding-right:64px">
+          <button type="button" class="pass-toggle" data-target="loginPassword" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--indigo-600)">Show</button>
+        </div>
+        <div class="err" id="passErr"></div>
+      </div>
+      <div class="auth-row">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-gold">Sign In</button>
+    </form>
+
+    <div class="demo-hint">
+      <strong>Demo access:</strong> use any valid email + a password of 4+ characters.<br>
+      Suggested &mdash; <span id="roleHint">demo@stacklysummit.in / demo1234</span>
+    </div>
+
+    <p class="auth-foot">Don't have an account? <a href="signup.html">Create one</a></p>
+  </div>
+  </div>
+  </div>
+</div>
+<script src="assets/dashboard.js"></script>
+<script>initLoginPage();</script>
+
+</body>
+</html>

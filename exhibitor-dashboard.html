@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibitor Dashboard | Stackly Summit 2026</title>
+<link rel="icon" href="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body class="dash-body">
+  <div class="dash-shell">
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-logo">
+        <img src="https://wsrv.nl/?url=https://snabsolutions.in/wp-content/uploads/2026/02/stackly-snab-solutions.png&w=280&output=webp&q=85&fit=cover&tint=D4AF37" alt="Stackly Summit logo">
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse sidebar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M15 6l-6 6 6 6"/></svg></button>
+      </div>
+      <nav class="dash-nav">
+<span class="dash-nav-group-label">Workspace</span>
+          <button data-section="overview" data-title="Overview" class="active" title="Overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="nav-label">Overview</span>
+          </button>
+          <button data-section="booth" data-title="Booth Information" class="" title="Booth Info">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 21l6-6M3 21v-5M3 21h5"/><path d="M21 3l-6 6M21 3v5M21 3h-5"/></svg><span class="nav-label">Booth Info</span>
+          </button>
+          <button data-section="leads" data-title="Leads Captured" class="" title="Leads">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><span class="nav-label">Leads</span><span class="nav-badge">86</span>
+          </button>
+          <button data-section="team" data-title="Team Passes" class="" title="Team Passes">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/><circle cx="18" cy="8" r="2.5"/><path d="M16 13.5c2.5.3 4.5 2 4.5 4.5"/></svg><span class="nav-label">Team Passes</span><span class="nav-badge">15</span>
+          </button>
+<span class="dash-nav-group-label">Account</span>
+          <button data-section="profile" data-title="Company Profile" class="" title="Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span class="nav-label">Profile</span>
+          </button>
+      </nav>
+      <div class="dash-sidebar-foot">
+        <div class="sidebar-profile">
+          <div class="avatar" data-user-initials>--</div>
+          <div class="meta"><strong data-user-name>Loading...</strong><span data-user-role>exhibitor</span></div>
+        </div>
+        <button class="dash-logout" title="Logout"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg><span class="lo-label">Logout</span></button>
+      </div>
+    </aside>
+    <main class="dash-main">
+      <div class="dash-topbar">
+        <div style="display:flex;align-items:center;gap:14px">
+          <button class="mobile-menu-btn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          <div>
+            <span class="topbar-eyebrow">Stackly Summit 2026</span>
+            <h2 id="dashSectionTitle">Overview</h2>
+          </div>
+        </div>
+        <div class="dash-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" placeholder="Search sessions, leads, people...">
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-icon-btn" id="notifBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+            <span class="notif-dot"></span>
+            <div class="notif-dropdown" id="notifDropdown">
+              <h4>Notifications</h4>
+              <div class="notif-item"><span class="ni-dot"></span><div><p>Your workshop seat for "Building with LLMs" is confirmed.</p><span>2 hours ago</span></div></div>
+              <div class="notif-item"><span class="ni-dot"></span><div><p>Agenda update: Day 2 keynote moved to 2:30 PM.</p><span>Yesterday</span></div></div>
+              <div class="notif-item"><span class="ni-dot"></span><div><p>New speaker announced: Karthik Iyer, Orbital Fintech.</p><span>2 days ago</span></div></div>
+            </div>
+          </div>
+          <div class="login-id-pill">
+            <div class="avatar" data-user-initials>--</div>
+            <div class="meta"><strong data-user-name>Loading...</strong><span>ID: <span data-user-loginid>--</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-content">
+        <section class="dash-section active" data-section="overview">
+          <div class="welcome-banner">
+            <div>
+              <div class="wb-eyebrow">Welcome back</div>
+              <h2 data-user-name>Loading...</h2>
+              <p>Your booth is confirmed for Stackly Summit 2026 &mdash; 12&ndash;14 March at BIEC, Bengaluru.</p>
+            </div>
+            <div class="wb-actions">
+              <a href="#leads" onclick="document.querySelector('[data-section=&quot;leads&quot;]').click();return false;" class="btn btn-gold btn-sm">View Leads</a>
+              <a href="#" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,.4)">Download Floor Plan</a>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <button class="qa-btn" data-action="export-leads"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg></div><span>Export Leads</span></button>
+            <button class="qa-btn" data-action="copy-loginid"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg></div><span>Copy Login ID</span></button>
+            <button class="qa-btn" data-open-modal="#teamModal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/></svg></div><span>Add Team Member</span></button>
+            <button class="qa-btn" onclick="document.querySelector('[data-section=&quot;booth&quot;]').click()"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 21l6-6M3 21v-5M3 21h5"/><path d="M21 3l-6 6M21 3v5M21 3h-5"/></svg></div><span>Booth Info</span></button>
+          </div>
+
+          <div class="dash-stats">
+            <div class="dstat-card"><span class="stat-trend up"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M6 18L18 6M18 6H9M18 6v9"/></svg>Active</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 21l6-6M3 21v-5M3 21h5"/><path d="M21 3l-6 6M21 3v5M21 3h-5"/></svg></div><div><strong>Gold</strong><span>Booth Tier &bull; B-114</span></div></div>
+            <div class="dstat-card"><span class="stat-trend up"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M6 18L18 6M18 6H9M18 6v9"/></svg>+18%</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div><strong>86</strong><span>Leads Captured</span></div></div>
+            <div class="dstat-card"><span class="stat-trend down"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M18 6L6 18M6 18h9M6 18V9"/></svg>3 left</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/></svg></div><div><strong>15</strong><span>Team Passes</span></div></div>
+            <div class="dstat-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div><div><strong>3</strong><span>Days to Go</span></div></div>
+          </div>
+
+          <div class="dash-card">
+            <h3>Leads Captured This Week</h3>
+            <div class="chart-wrap">
+              <div class="chart-col"><div class="chart-bar" style="height:22%"></div><span>Mon</span></div>
+              <div class="chart-col"><div class="chart-bar" style="height:34%"></div><span>Tue</span></div>
+              <div class="chart-col"><div class="chart-bar" style="height:28%"></div><span>Wed</span></div>
+              <div class="chart-col"><div class="chart-bar alt" style="height:62%"></div><span>Day 1</span></div>
+              <div class="chart-col"><div class="chart-bar alt" style="height:88%"></div><span>Day 2</span></div>
+            </div>
+            <div class="chart-legend">
+              <div><span class="dot" style="background:var(--gold-500)"></span>Pre-Summit Outreach</div>
+              <div><span class="dot" style="background:var(--indigo-600)"></span>Booth Scans</div>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <h3>Your Login ID <button class="btn btn-navy btn-sm" data-action="copy-loginid">Copy ID</button></h3>
+            <div class="list-row">
+              <div class="lr-main">
+                <div class="lr-icon" data-user-initials>--</div>
+                <div><h4 data-user-name>Loading...</h4><p class="lr-sub">Login ID: <strong data-user-loginid>--</strong> &bull; <span data-user-email>--</span></p></div>
+              </div>
+              <span class="track-pill track-workshop">Verified</span>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <h3>Recent Leads</h3>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">MS</div><div><h4>Meera Shah &bull; Orbital Fintech</h4><p class="lr-sub">Scanned 2 hours ago</p></div></div><span class="status-pill status-hot">Hot</span></div>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">AK</div><div><h4>Arjun Kapoor &bull; Kaveri Robotics</h4><p class="lr-sub">Scanned 5 hours ago</p></div></div><span class="status-pill status-warm">Warm</span></div>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">PN</div><div><h4>Priya Nair &bull; Zenith AI</h4><p class="lr-sub">Scanned yesterday</p></div></div><span class="status-pill status-cold">Cold</span></div>
+          </div>
+        </section>
+        <section class="dash-section" data-section="booth">
+          <div class="ticket-card">
+            <div class="t-info">
+              <div class="eyebrow">Gold Sponsorship</div>
+              <h3>Booth B-114</h3>
+              <p>Main Hall, near the mainstage &amp; networking lounge</p>
+              <div class="ticket-actions mt-40">
+                <button class="btn btn-gold btn-sm">Download Floor Plan</button>
+                <button class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,.4)" data-action="copy-loginid">Copy Login ID</button>
+              </div>
+            </div>
+            <div class="ticket-qr"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#fff"/><g fill="#0b0e1f"><rect x="8" y="8" width="24" height="24"/><rect x="68" y="8" width="24" height="24"/><rect x="8" y="68" width="24" height="24"/><rect x="16" y="16" width="8" height="8" fill="#fff"/><rect x="76" y="16" width="8" height="8" fill="#fff"/><rect x="16" y="76" width="8" height="8" fill="#fff"/><rect x="40" y="8" width="6" height="6"/><rect x="52" y="8" width="6" height="6"/><rect x="40" y="20" width="6" height="6"/><rect x="8" y="40" width="6" height="6"/><rect x="20" y="40" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="52" y="40" width="6" height="6"/><rect x="64" y="40" width="6" height="6"/><rect x="76" y="40" width="6" height="6"/><rect x="88" y="40" width="6" height="6"/><rect x="40" y="52" width="6" height="6"/><rect x="64" y="52" width="6" height="6"/><rect x="40" y="64" width="6" height="6"/><rect x="52" y="64" width="6" height="6"/><rect x="76" y="64" width="6" height="6"/><rect x="40" y="76" width="6" height="6"/><rect x="64" y="76" width="6" height="6"/><rect x="88" y="76" width="6" height="6"/><rect x="52" y="88" width="6" height="6"/><rect x="76" y="88" width="6" height="6"/></g></svg></div>
+          </div>
+          <div class="dash-card">
+            <h3>Booth Package Inclusions</h3>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">6&times;6</div><div><h4>Premium Booth Space</h4><p class="lr-sub">6m &times; 6m, corner location</p></div></div><span class="track-pill track-keynote">Confirmed</span></div>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">15</div><div><h4>Exhibitor Passes</h4><p class="lr-sub">12 assigned, 3 remaining</p></div></div><span class="track-pill track-workshop">Active</span></div>
+            <div class="list-row"><div class="lr-main"><div class="lr-icon">20m</div><div><h4>Stage Session Slot</h4><p class="lr-sub">13 Mar &bull; 11:00 AM &bull; Tech Stage</p></div></div><span class="track-pill track-tech">Scheduled</span></div>
+          </div>
+        </section>
+        <section class="dash-section" data-section="leads">
+          <div class="dash-card">
+            <h3>Leads Captured <button class="btn btn-gold btn-sm" data-action="export-leads">Export CSV</button></h3>
+            <div class="dtable-toolbar">
+              <input type="text" id="leadSearch" placeholder="Search leads by name or company...">
+              <div class="tabs" style="margin:0;gap:8px">
+                <button class="tab-btn active" data-lead-filter="all">All</button>
+                <button class="tab-btn" data-lead-filter="hot">Hot</button>
+                <button class="tab-btn" data-lead-filter="warm">Warm</button>
+                <button class="tab-btn" data-lead-filter="cold">Cold</button>
+              </div>
+            </div>
+            <div style="overflow-x:auto">
+            <table class="dtable" id="leadsTable">
+              <thead><tr><th>Name</th><th>Company</th><th>Email</th><th>Status</th></tr></thead>
+              <tbody>
+            <tr data-status="hot"><td>Meera Shah</td><td>Orbital Fintech</td><td>meera.shah@orbital.in</td><td><span class="status-pill status-hot">Hot</span></td></tr>
+            <tr data-status="warm"><td>Arjun Kapoor</td><td>Kaveri Robotics</td><td>arjun.k@kaverirobotics.in</td><td><span class="status-pill status-warm">Warm</span></td></tr>
+            <tr data-status="cold"><td>Priya Nair</td><td>Zenith AI</td><td>priya.nair@zenithai.in</td><td><span class="status-pill status-cold">Cold</span></td></tr>
+            <tr data-status="warm"><td>Sanjana Rao</td><td>Orbital Fintech</td><td>sanjana.rao@orbital.in</td><td><span class="status-pill status-warm">Warm</span></td></tr>
+            <tr data-status="hot"><td>Vikram Sethi</td><td>Silverline Health</td><td>vikram.s@silverline.in</td><td><span class="status-pill status-hot">Hot</span></td></tr>
+            <tr data-status="cold"><td>Ishaan Verma</td><td>Kaveri Robotics</td><td>ishaan.v@kaverirobotics.in</td><td><span class="status-pill status-cold">Cold</span></td></tr>
+            <tr data-status="warm"><td>Neha Kulkarni</td><td>NimbusCloud</td><td>neha.k@nimbuscloud.in</td><td><span class="status-pill status-warm">Warm</span></td></tr>
+            <tr data-status="hot"><td>Karthik Iyer</td><td>Orbital Fintech</td><td>karthik.i@orbital.in</td><td><span class="status-pill status-hot">Hot</span></td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </section>
+        <section class="dash-section" data-section="team">
+          <div class="dash-card">
+            <h3>Team Passes <button class="btn btn-gold btn-sm" data-open-modal="#teamModal">Add Team Member</button></h3>
+            <div id="teamList">
+              <div class="list-row"><div class="lr-main"><div class="lr-icon">RK</div><div><h4>Rohan Kapadia</h4><p class="lr-sub">Booth Manager &bull; Pass generated</p></div></div><span class="track-pill track-tech">Active</span></div>
+              <div class="list-row"><div class="lr-main"><div class="lr-icon">SP</div><div><h4>Simran Patel</h4><p class="lr-sub">Sales Lead &bull; Pass generated</p></div></div><span class="track-pill track-tech">Active</span></div>
+              <div class="list-row"><div class="lr-main"><div class="lr-icon">AJ</div><div><h4>Aman Joshi</h4><p class="lr-sub">Product Demo &bull; Pass generated</p></div></div><span class="track-pill track-tech">Active</span></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="modal-overlay" id="teamModal">
+          <div class="modal-box">
+            <h3>Add Team Member</h3>
+            <form id="teamForm">
+              <div class="form-group" style="margin-bottom:18px"><label>Full Name</label><input type="text" id="teamName" placeholder="Team member's name"></div>
+              <div class="form-group" style="margin-bottom:0"><label>Role</label><select id="teamRole"><option>Booth Staff</option><option>Sales Lead</option><option>Product Demo</option><option>Booth Manager</option></select></div>
+              <div class="modal-actions">
+                <button type="button" class="btn btn-outline" style="border-color:rgba(17,21,48,.2);color:var(--navy-950)" data-close-modal>Cancel</button>
+                <button type="submit" class="btn btn-gold">Generate Pass</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <section class="dash-section" data-section="profile">
+          <div class="dash-card">
+            <div class="profile-avatar-row">
+              <div class="profile-avatar-lg" data-user-initials>--</div>
+              <div><h3 data-user-name style="margin-bottom:4px">Loading...</h3><p style="color:var(--grey-600);font-size:13.5px">Login ID: <strong data-user-loginid>--</strong></p></div>
+            </div>
+            <form id="profileForm">
+              <div class="form-row">
+                <div class="form-group"><label>Contact Name</label><input type="text" data-user-name-input placeholder="Your name"></div>
+                <div class="form-group"><label>Email Address</label><input type="email" data-user-email-input placeholder="you@company.com" readonly></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Company Name</label><input type="text" placeholder="Your company"></div>
+                <div class="form-group"><label>Booth Tier</label><select><option>Gold</option><option>Platinum</option><option>Silver</option><option>Bronze</option></select></div>
+              </div>
+              <button type="submit" class="btn btn-navy">Save Changes</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="assets/dashboard.js"></script>
+  <script>
+    const auth = requireAuth('exhibitor');
+    if (auth) { initDashboardShell(auth); var ni=document.querySelector('[data-user-name-input]'); if(ni) ni.value=auth.name; var ei=document.querySelector('[data-user-email-input]'); if(ei) ei.value=auth.email; }
+    const collapseBtn = document.getElementById('sidebarCollapseBtn');
+    const sidebar = document.getElementById('dashSidebar');
+    if (collapseBtn) collapseBtn.addEventListener('click', function () { sidebar.classList.toggle('collapsed'); });
+  </script>
+</body>
+</html>
