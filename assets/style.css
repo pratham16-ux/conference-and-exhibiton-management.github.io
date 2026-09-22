@@ -119,7 +119,7 @@ header.site-header.scrolled{background:rgba(11,14,31,.94);box-shadow:0 8px 30px 
 header.site-header.hide{transform:translateY(-120%)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px max(var(--gutter),env(safe-area-inset-right)) 10px max(var(--gutter),env(safe-area-inset-left));max-width:var(--container);margin:0 auto}
 .logo{display:block;flex-shrink:0}
-.logo img{height:55px;width:auto;transition:transform .35s var(--ease)}
+.logo img{height:68px;width:auto;transition:transform .35s var(--ease)}
 .logo:hover img{transform:scale(1.06) rotate(-1deg)}
 nav.main-nav{display:none}
 .nav-cta{display:flex;align-items:center;gap:10px}
@@ -471,7 +471,7 @@ html.js .reveal.in .img-frame,html.js .img-frame.reveal.in{animation:frameOpen 1
 @media (min-width:700px){
   :root{--gutter:32px;--sec-y:88px}
   .announce{font-size:13px}
-  .logo img{height:40px}
+  .logo img{height:52px}
   .nav-cta .btn-gold{display:inline-flex}
   .hero-actions{flex-direction:row;flex-wrap:wrap}
   .hero-actions .btn{width:auto}

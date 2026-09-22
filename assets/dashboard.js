@@ -78,9 +78,123 @@ function initLoginPage() {
     }, 500);
   });
 
+  initPassToggles();
+}
+
+/* ===== SIGNUP PAGE LOGIC ===== */
+function initSignupPage() {
+  const roleBtns = document.querySelectorAll('.role-toggle button');
+  const form = document.getElementById('signupForm');
+  const alertBox = document.getElementById('signupAlert');
+  let role = 'attendee';
+
+  roleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      roleBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      role = btn.getAttribute('data-role');
+    });
+  });
+
+  if (!form) return;
+  const EMAIL_RE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const PHONE_RE = /^[6-9]\d{9}$/;
+
+  function setError(field, errId, msg) {
+    const errEl = document.getElementById(errId);
+    if (msg) {
+      field.classList.add('invalid');
+      if (errEl) errEl.textContent = msg;
+    } else {
+      field.classList.remove('invalid');
+      if (errEl) errEl.textContent = '';
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (alertBox) alertBox.classList.remove('show');
+
+    const nameField = document.getElementById('signupName');
+    const emailField = document.getElementById('signupEmail');
+    const phoneField = document.getElementById('signupPhone');
+    const passField = document.getElementById('signupPassword');
+    const confirmField = document.getElementById('signupConfirm');
+    const termsField = document.getElementById('signupTerms');
+
+    const name = nameField.value.trim();
+    const email = emailField.value.trim();
+    const phone = phoneField.value.trim().replace(/\D/g, '');
+    const pass = passField.value.trim();
+    const confirm = confirmField.value.trim();
+
+    let valid = true;
+
+    if (name.length < 2) {
+      setError(nameField, 'nameErr', 'Enter your full name');
+      valid = false;
+    } else {
+      setError(nameField, 'nameErr', '');
+    }
+
+    if (!EMAIL_RE.test(email)) {
+      setError(emailField, 'signupEmailErr', 'Enter a valid email address');
+      valid = false;
+    } else {
+      setError(emailField, 'signupEmailErr', '');
+    }
+
+    if (!PHONE_RE.test(phone)) {
+      setError(phoneField, 'phoneErr', 'Enter a valid 10-digit number starting with 6-9');
+      valid = false;
+    } else {
+      setError(phoneField, 'phoneErr', '');
+    }
+
+    if (pass.length < 4) {
+      setError(passField, 'signupPassErr', 'Password must be at least 4 characters');
+      valid = false;
+    } else {
+      setError(passField, 'signupPassErr', '');
+    }
+
+    if (!confirm || confirm !== pass) {
+      setError(confirmField, 'confirmErr', 'Passwords do not match');
+      valid = false;
+    } else {
+      setError(confirmField, 'confirmErr', '');
+    }
+
+    const termsErr = document.getElementById('termsErr');
+    if (!termsField.checked) {
+      if (termsErr) termsErr.textContent = 'You must accept the Terms of Service and Privacy Policy';
+      valid = false;
+    } else if (termsErr) {
+      termsErr.textContent = '';
+    }
+
+    if (!valid) {
+      if (alertBox) alertBox.classList.add('show');
+      return;
+    }
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Creating account...';
+    setTimeout(function () {
+      window.location.href = 'login.html';
+    }, 600);
+  });
+
+  initPassToggles();
+}
+
+/* ===== Shared password show/hide toggles ===== */
+function initPassToggles() {
   document.querySelectorAll('.pass-toggle').forEach(function (t) {
     t.addEventListener('click', function () {
-      const input = document.getElementById('loginPassword');
+      const targetId = t.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if (!input) return;
       input.type = input.type === 'password' ? 'text' : 'password';
       t.textContent = input.type === 'password' ? 'Show' : 'Hide';
     });
